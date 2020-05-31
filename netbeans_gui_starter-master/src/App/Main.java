@@ -31,8 +31,10 @@ public class Main {
     }
 
     public static void lessDice() {
+        if(numDice > 0){
         numDice--;
         gui.setDiceCount("" + numDice);
+        }
     }
 
     public static void moreSides() {
@@ -41,8 +43,10 @@ public class Main {
     }
 
     public static void lessSides() {
+        if(numSides >0){
         numSides--;
         gui.setSideCount("" + numSides);
+        }
     }
     
 //    public static diceRolls(){
