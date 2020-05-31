@@ -27,57 +27,63 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnTheButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        btnTheButton1 = new javax.swing.JButton();
-        btnTheButton2 = new javax.swing.JButton();
-        btnTheButton3 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        plusDiceBtn = new javax.swing.JButton();
+        diceLabel = new javax.swing.JLabel();
+        sideLabel = new javax.swing.JLabel();
+        minusDiceBtn = new javax.swing.JButton();
+        plusSideBtn = new javax.swing.JButton();
+        minusSideBtn = new javax.swing.JButton();
+        totalBtn = new javax.swing.JButton();
+        totalLabel = new javax.swing.JLabel();
+        totalNum = new javax.swing.JLabel();
+        diceCount = new javax.swing.JLabel();
+        sideCount = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnTheButton.setText("Button");
-        btnTheButton.addActionListener(new java.awt.event.ActionListener() {
+        plusDiceBtn.setText("+");
+        plusDiceBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTheButtonActionPerformed(evt);
+                plusDiceBtnActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("# of Dice");
+        diceLabel.setText("# of Dice:");
 
-        jLabel2.setText("# of Sides");
+        sideLabel.setText("# of Sides:");
 
-        btnTheButton1.setText("Button");
-        btnTheButton1.addActionListener(new java.awt.event.ActionListener() {
+        minusDiceBtn.setText("-");
+        minusDiceBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTheButton1ActionPerformed(evt);
+                minusDiceBtnActionPerformed(evt);
             }
         });
 
-        btnTheButton2.setText("Button");
-        btnTheButton2.addActionListener(new java.awt.event.ActionListener() {
+        plusSideBtn.setText("+");
+        plusSideBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTheButton2ActionPerformed(evt);
+                plusSideBtnActionPerformed(evt);
             }
         });
 
-        btnTheButton3.setText("Button");
-        btnTheButton3.addActionListener(new java.awt.event.ActionListener() {
+        minusSideBtn.setText("-");
+        minusSideBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTheButton3ActionPerformed(evt);
+                minusSideBtnActionPerformed(evt);
             }
         });
 
-        jButton1.setText("jButton1");
+        totalBtn.setText("Roll!");
 
-        jLabel3.setText("Total:");
+        totalLabel.setText("Total:");
 
-        jLabel4.setText("Total");
+        totalNum.setText("Total");
+
+        diceCount.setText("0");
+
+        sideCount.setText("0");
 
         jTable1.setAutoCreateColumnsFromModel(false);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -99,29 +105,38 @@ public class GUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnTheButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addGap(30, 30, 30)
+                        .addComponent(diceCount)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(minusDiceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(diceLabel)
                         .addGap(18, 18, 18)
-                        .addComponent(btnTheButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
+                        .addComponent(plusDiceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(sideLabel)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(sideCount)
+                        .addGap(45, 45, 45)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnTheButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTheButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(minusSideBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(plusSideBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(157, 157, 157)
-                        .addComponent(jButton1))
+                        .addComponent(totalBtn))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(136, 136, 136)
-                        .addComponent(jLabel3)
+                        .addComponent(totalLabel)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel4))
+                        .addComponent(totalNum))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(96, 96, 96)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -132,28 +147,29 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(58, 58, 58)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnTheButton)
-                                    .addComponent(btnTheButton2)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(83, 83, 83)
-                                .addComponent(jLabel1)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(58, 58, 58)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnTheButton1)
-                            .addComponent(btnTheButton3)))
+                            .addComponent(plusDiceBtn)
+                            .addComponent(plusSideBtn))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(minusDiceBtn)
+                            .addComponent(minusSideBtn)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(85, 85, 85)
-                        .addComponent(jLabel2)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sideLabel)
+                            .addComponent(diceLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(diceCount)
+                            .addComponent(sideCount))))
                 .addGap(66, 66, 66)
-                .addComponent(jButton1)
+                .addComponent(totalBtn)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(totalLabel)
+                    .addComponent(totalNum))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -162,38 +178,48 @@ public class GUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnTheButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTheButtonActionPerformed
+    private void plusDiceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusDiceBtnActionPerformed
         Main.moreDice();
-    }//GEN-LAST:event_btnTheButtonActionPerformed
+    }//GEN-LAST:event_plusDiceBtnActionPerformed
 
-    private void btnTheButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTheButton1ActionPerformed
+    private void minusDiceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusDiceBtnActionPerformed
         Main.lessDice();
-    }//GEN-LAST:event_btnTheButton1ActionPerformed
+    }//GEN-LAST:event_minusDiceBtnActionPerformed
 
-    private void btnTheButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTheButton2ActionPerformed
+    private void plusSideBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusSideBtnActionPerformed
         Main.moreSides();
-    }//GEN-LAST:event_btnTheButton2ActionPerformed
+    }//GEN-LAST:event_plusSideBtnActionPerformed
 
-    private void btnTheButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTheButton3ActionPerformed
+    private void minusSideBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusSideBtnActionPerformed
         Main.lessSides();
-    }//GEN-LAST:event_btnTheButton3ActionPerformed
+    }//GEN-LAST:event_minusSideBtnActionPerformed
+
+    void setDiceCount(String string) {
+        diceCount.setText(string);
+    }
+
+    void setSideCount(String string) {
+        sideCount.setText(string);
+    }
     
-    void setButtonText(String string) {
-        btnTheButton.setText(string);
+    void setTotal(String string) {
+        diceCount.setText(string);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnTheButton;
-    private javax.swing.JButton btnTheButton1;
-    private javax.swing.JButton btnTheButton2;
-    private javax.swing.JButton btnTheButton3;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel diceCount;
+    private javax.swing.JLabel diceLabel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton minusDiceBtn;
+    private javax.swing.JButton minusSideBtn;
+    private javax.swing.JButton plusDiceBtn;
+    private javax.swing.JButton plusSideBtn;
+    private javax.swing.JLabel sideCount;
+    private javax.swing.JLabel sideLabel;
+    private javax.swing.JButton totalBtn;
+    private javax.swing.JLabel totalLabel;
+    private javax.swing.JLabel totalNum;
     // End of variables declaration//GEN-END:variables
 
 
