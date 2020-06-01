@@ -83,9 +83,9 @@ public class GUI extends javax.swing.JFrame {
 
         resultLabel.setText("Result:");
 
-        diceCount.setText("0");
+        diceCount.setText("1");
 
-        sideCount.setText("0");
+        sideCount.setText("1");
 
         answerBox.setColumns(20);
         answerBox.setRows(5);
@@ -138,9 +138,9 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(58, 58, 58)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(plusDiceBtn)
-                            .addComponent(plusSideBtn))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(plusSideBtn, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(plusDiceBtn))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(minusDiceBtn)
