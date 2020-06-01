@@ -9,14 +9,14 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    private static GUI gui;
+    public static GUI gui;
     private static int count = 0;
     private static int numDice = 0;
     private static int numSides = 0;
     private static int results[];
     //private static int rand;
-    
-    
+    private static String list = "";
+
     public static void main(String[] args) {
         /* Create and display the GUI */
         gui = new GUI();
@@ -33,9 +33,9 @@ public class Main {
     }
 
     public static void lessDice() {
-        if(numDice > 0){
-        numDice--;
-        gui.setDiceCount("" + numDice);
+        if (numDice > 0) {
+            numDice--;
+            gui.setDiceCount("" + numDice);
         }
     }
 
@@ -45,16 +45,20 @@ public class Main {
     }
 
     public static void lessSides() {
-        if(numSides >0){
-        numSides--;
-        gui.setSideCount("" + numSides);
+        if (numSides > 0) {
+            numSides--;
+            gui.setSideCount("" + numSides);
         }
     }
-    
+
     public static void displayResult() {
+        count = 0;
+        list = "";
+        results = null;
+        gui.setResultBox("");
         results = new int[numDice + 1];
 
-        while(count < numDice) {
+        while (count < numDice) {
             int maxSides = numSides;
             int min = 1;
             int range = maxSides - min + 1;
@@ -65,6 +69,14 @@ public class Main {
                 count++;
             }
         }
-        //Table goes here
+        //List Goes Here
+        count = 0;
+        while (count < numDice) {
+            if (count != numDice - 1){ 
+                list = list + results[count] + ", ";
+            }
+            count++;
+        }
+        gui.setResultBox(list);
     }
 }
