@@ -13,7 +13,9 @@ public class Main {
     private static int count = 0;
     private static int numDice = 0;
     private static int numSides = 0;
-    private static int result = 0;
+    private static int results[];
+    //private static int rand;
+    
     
     public static void main(String[] args) {
         /* Create and display the GUI */
@@ -48,6 +50,23 @@ public class Main {
         gui.setSideCount("" + numSides);
         }
     }
+    
+    public static void displayResult() {
+        results = new int[numDice + 1];
+
+        if (count < numDice) {
+            int maxSides = numSides;
+            int minDice = 1;
+            int range = maxSides - minDice + 1;
+
+            for (int i = 0; i < maxSides; i++) {
+                int rand = (int) (Math.random() * range) + minDice;
+                results[count] = rand;
+                count++;
+            }
+        }
+    }
+    
     
 //    public static diceRolls(){
 //                count++;

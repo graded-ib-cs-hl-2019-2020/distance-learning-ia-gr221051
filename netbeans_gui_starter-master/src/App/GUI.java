@@ -33,9 +33,8 @@ public class GUI extends javax.swing.JFrame {
         minusDiceBtn = new javax.swing.JButton();
         plusSideBtn = new javax.swing.JButton();
         minusSideBtn = new javax.swing.JButton();
-        totalBtn = new javax.swing.JButton();
-        totalLabel = new javax.swing.JLabel();
-        totalNum = new javax.swing.JLabel();
+        resultBtn = new javax.swing.JButton();
+        resultLabel = new javax.swing.JLabel();
         diceCount = new javax.swing.JLabel();
         sideCount = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -75,11 +74,14 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        totalBtn.setText("Roll!");
+        resultBtn.setText("Roll!");
+        resultBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resultBtnActionPerformed(evt);
+            }
+        });
 
-        totalLabel.setText("Total:");
-
-        totalNum.setText("Total");
+        resultLabel.setText("Result:");
 
         diceCount.setText("0");
 
@@ -115,7 +117,7 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(diceLabel)
                         .addGap(18, 18, 18)
                         .addComponent(plusDiceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(sideLabel)
@@ -131,16 +133,15 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(157, 157, 157)
-                        .addComponent(totalBtn))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(resultBtn)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(resultLabel))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addComponent(totalLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(totalNum))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(32, 32, 32)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,14 +166,12 @@ public class GUI extends javax.swing.JFrame {
                             .addComponent(diceCount)
                             .addComponent(sideCount))))
                 .addGap(66, 66, 66)
-                .addComponent(totalBtn)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(totalLabel)
-                    .addComponent(totalNum))
+                .addComponent(resultBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(resultLabel)
+                .addGap(74, 74, 74)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -194,6 +193,10 @@ public class GUI extends javax.swing.JFrame {
         Main.lessSides();
     }//GEN-LAST:event_minusSideBtnActionPerformed
 
+    private void resultBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultBtnActionPerformed
+        Main.displayResult();
+    }//GEN-LAST:event_resultBtnActionPerformed
+
     void setDiceCount(String string) {
         diceCount.setText(string);
     }
@@ -203,7 +206,7 @@ public class GUI extends javax.swing.JFrame {
     }
     
     void setTotal(String string) {
-        diceCount.setText(string);
+    //table code
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -215,11 +218,10 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton minusSideBtn;
     private javax.swing.JButton plusDiceBtn;
     private javax.swing.JButton plusSideBtn;
+    private javax.swing.JButton resultBtn;
+    private javax.swing.JLabel resultLabel;
     private javax.swing.JLabel sideCount;
     private javax.swing.JLabel sideLabel;
-    private javax.swing.JButton totalBtn;
-    private javax.swing.JLabel totalLabel;
-    private javax.swing.JLabel totalNum;
     // End of variables declaration//GEN-END:variables
 
 
