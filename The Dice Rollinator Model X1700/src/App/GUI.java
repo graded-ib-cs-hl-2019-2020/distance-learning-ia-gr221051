@@ -85,7 +85,7 @@ public class GUI extends javax.swing.JFrame {
 
         diceCount.setText("1");
 
-        sideCount.setText("1");
+        sideCount.setText("2");
 
         answerBox.setColumns(20);
         answerBox.setRows(5);

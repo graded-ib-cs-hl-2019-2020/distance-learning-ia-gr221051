@@ -12,9 +12,7 @@ public class Main {
     public static GUI gui;
     private static int count = 0;
     private static int numDice = 1;
-    private static int numDiceBackup = 1;
-    private static int numSides = 1;
-    private static int numSidesBackup = 1;
+    private static int numSides = 2;
     private static int results[];
     //private static int rand;
     private static String list = "";
@@ -31,59 +29,53 @@ public class Main {
 
     public static void moreDice() {
         numDice++;
-        numDiceBackup++;
         gui.setDiceCount("" + numDice);
     }
 
     public static void lessDice() {
         if (numDice > 0) {
             numDice--;
-            numDiceBackup--;
             gui.setDiceCount("" + numDice);
         }
     }
 
     public static void moreSides() {
         numSides++;
-        numSidesBackup++;
         gui.setSideCount("" + numSides);
     }
 
     public static void lessSides() {
-        if (numSides > 0) {
+        if (numSides > 2) {
             numSides--;
-            numSidesBackup--;
             gui.setSideCount("" + numSides);
         }
     }
 
     public static void displayResult() {
-        numDice = numDiceBackup;
-        numSides = numSidesBackup;
         count = 0;
         list = "";
         results = null;
         gui.setResultBox("");
-        results = new int[numDice + 1];
+        results = new int[10000];
 
-        while (count < numDiceBackup) {
+        while (count < numDice ) {
             int maxSides = numSides;
             int min = 1;
             int range = maxSides - min + 1;
 
             for (int i = 0; i < maxSides; i++) {
                 int rand = (int) (Math.random() * range) + min;
-                results[count] = rand;
+                    results[count] = rand;
                 count++;
             }
         }
         //List Goes Here
         count = 0;
-        while (count < numDiceBackup) {
-//            if (count != numDice - 1){ 
+        while (count < numDice) {
+            if (count != numDice - 1){ 
                 list += results[count] + ", ";
-//            }
-//            else list += results[count] + ".";
+            }
+            else list += results[count] + ".";
             count++;
         }
         gui.setResultBox(list);
