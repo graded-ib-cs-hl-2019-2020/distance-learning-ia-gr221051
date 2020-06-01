@@ -73,8 +73,9 @@ public class Main {
         count = 0;
         while (count < numDice) {
             if (count != numDice - 1){ 
-                list = list + results[count] + ", ";
+                list += results[count] + ", ";
             }
+            else list += results[count] + ".";
             count++;
         }
         gui.setResultBox(list);
