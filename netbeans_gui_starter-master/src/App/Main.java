@@ -54,22 +54,17 @@ public class Main {
     public static void displayResult() {
         results = new int[numDice + 1];
 
-        if (count < numDice) {
+        while(count < numDice) {
             int maxSides = numSides;
-            int minDice = 1;
-            int range = maxSides - minDice + 1;
+            int min = 1;
+            int range = maxSides - min + 1;
 
             for (int i = 0; i < maxSides; i++) {
-                int rand = (int) (Math.random() * range) + minDice;
+                int rand = (int) (Math.random() * range) + min;
                 results[count] = rand;
                 count++;
             }
         }
+        //Table goes here
     }
-    
-    
-//    public static diceRolls(){
-//                count++;
-//        gui.setButtonText("Pressed " + count + " times!");
-//    }
 }

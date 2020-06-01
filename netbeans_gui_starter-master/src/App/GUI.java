@@ -204,10 +204,7 @@ public class GUI extends javax.swing.JFrame {
     void setSideCount(String string) {
         sideCount.setText(string);
     }
-    
-    void setTotal(String string) {
-    //table code
-    }
+   
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel diceCount;
