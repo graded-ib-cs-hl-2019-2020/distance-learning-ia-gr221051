@@ -193,11 +193,12 @@ public class GUI extends javax.swing.JFrame {
     void setSideCount(String string) {
         sideCount.setText(string);
     }
+
     void setResultBox(String string) {
         answerBox.setText(string);
     }
-   
-    
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea answerBox;
     private javax.swing.JLabel diceCount;
@@ -212,6 +213,5 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel sideCount;
     private javax.swing.JLabel sideLabel;
     // End of variables declaration//GEN-END:variables
-
 
 }

@@ -33,7 +33,7 @@ public class Main {
     }
 
     public static void lessDice() {
-        if (numDice > 0) {
+        if (numDice > 1) {
             numDice--;
             gui.setDiceCount("" + numDice);
         }
@@ -58,24 +58,25 @@ public class Main {
         gui.setResultBox("");
         results = new int[10000];
 
-        while (count < numDice ) {
+        while (count < numDice) {
             int maxSides = numSides;
             int min = 1;
             int range = maxSides - min + 1;
 
             for (int i = 0; i < maxSides; i++) {
                 int rand = (int) (Math.random() * range) + min;
-                    results[count] = rand;
+                results[count] = rand;
                 count++;
             }
         }
         //List Goes Here
         count = 0;
         while (count < numDice) {
-            if (count != numDice - 1){ 
+            if (count != numDice - 1) {
                 list += results[count] + ", ";
+            } else {
+                list += results[count] + ".";
             }
-            else list += results[count] + ".";
             count++;
         }
         gui.setResultBox(list);
